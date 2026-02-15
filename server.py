@@ -1,3 +1,6 @@
+"""
+Server application to detect emotion and analysis
+"""
 from flask import Flask, render_template, request
 from EmotionDetection.emotion_detection import emotion_detector
 
@@ -6,7 +9,8 @@ app = Flask("Emotion Detector")
 @app.route("/emotionDetector")
 def sent_analyzer():
     """
-    run the analysis on the analysis on the input text and return emotion scores and the dominant emotion.
+    run the analysis on the analysis on the input text and return emotion 
+    scores and the dominant emotion.
     """
     # get the text
     text_to_analyze = request.args.get('textToAnalyze')
